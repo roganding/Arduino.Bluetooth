@@ -1,1 +1,1 @@
-# Arduino_BT_Android
+##The communication between Arduino and other devices over Bluetooth.

@@ -1,22 +1,22 @@
-##The communication between Arduino and other devices over Bluetooth.
+## The communication between Arduino and other devices over Bluetooth.
 
-###What we need:
+### What we need:
 - Arduino Leonardo
 - USB Bluetooth Dongle 4.0
 - direct-current motor
 
 
-###[Serial Bluetooth Terminal on Linux](http://pi19404.github.io/pyVision/2015/04/03/22/)
+### [Serial Bluetooth Terminal on Linux](http://pi19404.github.io/pyVision/2015/04/03/22/)
 
 ```bash
-$ sudo apt-get install bluez bluez-tools
-$ hciconfig
-$ hcitool scan
-$ bluez-simple-agent xx:xx:xx:xx:xx   # the bluetooth device you want to pair
+sudo apt-get install bluez bluez-tools
+hciconfig
+hcitool scan
+bluez-simple-agent xx:xx:xx:xx:xx   # the bluetooth device you want to pair
 ```
 
 In /etc/bluetooth/rfcomm.conf:
-```bash
+```config
 rfcomm 0 {
     bind no;
     device xx:xx:xx:xx:xx;
@@ -26,5 +26,5 @@ rfcomm 0 {
 ```
 
 ```bash
-$ sudo rfcomm0 connect 0
+sudo rfcomm0 connect 0
 ```
